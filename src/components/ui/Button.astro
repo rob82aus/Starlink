@@ -91,76 +91,76 @@ const baseClass = `btn btn-${variant} btn-${size} ${className}`.trim();
 
   /* Primary (Blue System) */
   .btn-primary {
-    background: #3b82f6;
+    background: #2563eb;
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    border-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
   }
 
   .btn-primary:hover {
-    background: #2563eb;
+    background: #1d4ed8;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
   }
 
   .btn-primary:active {
     transform: translateY(0);
   }
 
-  /* Secondary (Starlink Blue/Cyan) */
+  /* Secondary (Navy / Slate Accent) */
   .btn-secondary {
-    background: linear-gradient(135deg, var(--starlink-blue) 0%, #1d4ed8 100%);
-    color: var(--text-white);
-    border-color: rgba(56, 189, 248, 0.3);
-    box-shadow: 0 4px 14px var(--starlink-blue-glow);
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
   }
 
   .btn-secondary:hover {
-    background: linear-gradient(135deg, var(--starlink-cyan) 0%, var(--starlink-blue) 100%);
-    color: var(--text-white);
+    background: #1e293b;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.45);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
   }
 
   /* Phone Specific (Direct Call Accent) */
   .btn-phone {
-    background: rgba(37, 99, 235, 0.15);
-    color: #60a5fa;
-    border-color: rgba(59, 130, 246, 0.4);
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+    font-weight: 700;
   }
 
   .btn-phone:hover {
-    background: var(--starlink-blue);
-    color: var(--text-white);
-    border-color: var(--starlink-blue);
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px var(--starlink-blue-glow);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
   }
 
   /* Outline */
   .btn-outline {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-heading);
-    border-color: var(--border-medium);
-    backdrop-filter: blur(8px);
+    background: #ffffff;
+    color: #0f172a;
+    border-color: #cbd5e1;
   }
 
   .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: var(--starlink-cyan-light);
-    color: var(--text-white);
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
     transform: translateY(-2px);
   }
 
   /* Ghost */
   .btn-ghost {
     background: transparent;
-    color: var(--text-muted);
+    color: #475569;
   }
 
   .btn-ghost:hover {
-    color: var(--text-white);
-    background: rgba(255, 255, 255, 0.06);
+    color: #0f172a;
+    background: #f1f5f9;
   }
 </style>

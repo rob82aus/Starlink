@@ -7,6 +7,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   output: 'static',
   build: {
-    format: 'directory'
+    format: 'directory',
+    inlineStylesheets: 'always'
   }
 });

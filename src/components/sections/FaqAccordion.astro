@@ -111,8 +111,8 @@ const faqs = [
   }
 
   .faq-item.is-active {
-    border-color: rgba(56, 189, 248, 0.4);
-    background: rgba(20, 30, 55, 0.85);
+    border-color: var(--starlink-cyan);
+    background: #f8fafc;
   }
 
   .faq-trigger {
@@ -127,7 +127,7 @@ const faqs = [
     border: none;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
-    color: var(--text-white);
+    color: var(--text-heading);
   }
 
   .faq-question-text {
@@ -140,12 +140,12 @@ const faqs = [
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: #f1f5f9;
     border: 1px solid var(--border-subtle);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--starlink-cyan-light);
+    color: var(--starlink-cyan);
     flex-shrink: 0;
     transition: transform var(--transition-smooth), background-color var(--transition-smooth);
   }
@@ -159,8 +159,9 @@ const faqs = [
   }
 
   .faq-item.is-active .faq-icon-wrap {
-    background: rgba(14, 165, 233, 0.2);
-    border-color: rgba(56, 189, 248, 0.4);
+    background: #e0f2fe;
+    border-color: #bae6fd;
+    color: var(--starlink-cyan);
   }
 
   .faq-panel {
@@ -169,7 +170,7 @@ const faqs = [
   }
 
   .faq-item.is-active .faq-panel {
-    border-top-color: rgba(255, 255, 255, 0.06);
+    border-top-color: var(--border-subtle);
   }
 
   .faq-content-inner p {

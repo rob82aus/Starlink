@@ -15,7 +15,14 @@ const { id = 'quote-form', compact = false } = Astro.props;
   </div>
 
   <form class="lead-form" id="starlink-lead-form" novalidate>
-    <!-- Honeypot for spam bot prevention -->
+    <!-- SplitForms Access Key & Metadata -->
+    <input type="hidden" name="access_key" value="1d66ead806e3439ea5d8caeab9092c18" />
+    <input type="hidden" name="subject" value="New Starlink Installation Quote Request" />
+
+    <!-- SplitForms Honeypot -->
+    <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" style="display: none;" />
+
+    <!-- Local Spam Trap Honeypot -->
     <div class="sr-only" aria-hidden="true">
       <label for="form-website-trap">Leave this field blank</label>
       <input type="text" id="form-website-trap" name="website_url" tabindex="-1" autocomplete="off" />
@@ -169,13 +176,11 @@ const { id = 'quote-form', compact = false } = Astro.props;
 
 <style>
   .quote-form-card {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: #ffffff;
+    border: 1px solid var(--border-medium);
     border-radius: 1.25rem;
     padding: clamp(1.5rem, 3vw, 2.25rem);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(14, 165, 233, 0.12);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
     position: relative;
     overflow: hidden;
   }
@@ -187,7 +192,7 @@ const { id = 'quote-form', compact = false } = Astro.props;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--starlink-cyan) 0%, var(--action-orange) 50%, var(--starlink-blue) 100%);
+    background: linear-gradient(90deg, #0284c7 0%, var(--action-orange) 50%, var(--starlink-blue) 100%);
   }
 
   .form-header {
@@ -201,9 +206,9 @@ const { id = 'quote-form', compact = false } = Astro.props;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--action-orange);
-    background: rgba(249, 115, 22, 0.12);
-    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #c2410c;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
     padding: 0.2rem 0.6rem;
     border-radius: 9999px;
     margin-bottom: 0.5rem;
@@ -211,7 +216,7 @@ const { id = 'quote-form', compact = false } = Astro.props;
 
   .form-title {
     font-size: clamp(1.25rem, 2vw, 1.5rem);
-    color: var(--text-white);
+    color: var(--text-heading);
     margin-bottom: 0.35rem;
   }
 
@@ -249,14 +254,14 @@ const { id = 'quote-form', compact = false } = Astro.props;
   .form-label {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #1e293b;
     display: flex;
     align-items: center;
     gap: 0.25rem;
   }
 
   .required {
-    color: #f87171;
+    color: #ef4444;
   }
 
   .optional {
@@ -271,8 +276,8 @@ const { id = 'quote-form', compact = false } = Astro.props;
     font-family: inherit;
     font-size: 0.9375rem;
     color: var(--text-heading);
-    background: rgba(7, 11, 20, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: 0.5rem;
     padding: 0.75rem 0.95rem;
     transition: all var(--transition-fast);
@@ -281,14 +286,14 @@ const { id = 'quote-form', compact = false } = Astro.props;
 
   .form-input:hover,
   .form-textarea:hover {
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: #94a3b8;
   }
 
   .form-input:focus,
   .form-textarea:focus {
     border-color: var(--starlink-cyan);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
-    background: rgba(11, 17, 32, 0.95);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    background: #ffffff;
   }
 
   .form-input::placeholder,
@@ -299,7 +304,7 @@ const { id = 'quote-form', compact = false } = Astro.props;
   .form-input.is-invalid,
   .form-textarea.is-invalid {
     border-color: #ef4444;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
   }
 
   .select-wrapper {
@@ -329,7 +334,7 @@ const { id = 'quote-form', compact = false } = Astro.props;
 
   .field-error {
     font-size: 0.75rem;
-    color: #f87171;
+    color: #dc2626;
     display: none;
   }
 
@@ -346,21 +351,21 @@ const { id = 'quote-form', compact = false } = Astro.props;
     font-family: 'Outfit', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--text-white);
-    background: #3b82f6;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    background: #2563eb;
+    border: 1px solid #1d4ed8;
     border-radius: 0.625rem;
     padding: 0.9rem 1.5rem;
     cursor: pointer;
     transition: all var(--transition-fast);
-    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     margin-top: 0.5rem;
   }
 
   .submit-btn:hover:not(:disabled) {
-    background: #2563eb;
+    background: #1d4ed8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
   }
 
   .submit-btn:active:not(:disabled) {
@@ -410,25 +415,25 @@ const { id = 'quote-form', compact = false } = Astro.props;
   }
 
   .form-success {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.4);
-    color: #6ee7b7;
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
   }
 
   .form-success p {
     margin-top: 0.25rem;
-    color: #d1fae5;
+    color: #15803d;
   }
 
   .form-error {
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid rgba(239, 68, 68, 0.4);
-    color: #fca5a5;
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
   }
 
   .form-error p {
     margin-top: 0.25rem;
-    color: #fee2e2;
+    color: #b91c1c;
   }
 
   .form-footer-note {
@@ -437,12 +442,12 @@ const { id = 'quote-form', compact = false } = Astro.props;
     justify-content: center;
     gap: 0.4rem;
     font-size: 0.75rem;
-    color: var(--text-dim);
+    color: var(--text-muted);
     text-align: center;
   }
 
   .form-footer-note svg {
-    color: var(--starlink-cyan-light);
+    color: var(--starlink-cyan);
     flex-shrink: 0;
   }
 </style>
@@ -508,9 +513,19 @@ const { id = 'quote-form', compact = false } = Astro.props;
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Check honeypot
+      // Prevent duplicate submissions while a request is in progress
+      if (submitBtn?.classList.contains('loading') || submitBtn?.disabled) {
+        return;
+      }
+
+      // Check SplitForms botcheck honeypot
+      const botcheck = form.querySelector('input[name="botcheck"]') as HTMLInputElement | null;
+      if (botcheck && botcheck.checked) {
+        return;
+      }
+
+      // Check local spam trap honeypot
       if (fields.website && fields.website.value.trim() !== '') {
-        console.warn('Spam trap triggered.');
         return;
       }
 
@@ -575,20 +590,42 @@ const { id = 'quote-form', compact = false } = Astro.props;
       if (generalError) generalError.style.display = 'none';
 
       try {
-        // Safe simulated asynchronous submission
-        await new Promise((resolve) => setTimeout(resolve, 800));
+        const formData = new FormData(form);
 
-        // Form success state
-        if (successAlert) successAlert.style.display = 'flex';
-        form.reset();
+        const response = await fetch('https://splitforms.com/api/submit', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json',
+          },
+        });
 
-        // Scroll success alert into view smoothly if needed
-        successAlert?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const result = await response.json().catch(() => null);
+
+        // Require an explicit, positive confirmation signal from the endpoint JSON payload.
+        // Malformed JSON, empty responses, and unconfirmed responses must never trigger success or form reset.
+        const isConfirmedSuccess = response.ok && Boolean(
+          result &&
+          (result.success === true || result.success === 'true' || result.status === 'success' || result.ok === true)
+        );
+
+        if (isConfirmedSuccess) {
+          // Form success state - only reset and display confirmation after verified server confirmation
+          if (successAlert) successAlert.style.display = 'flex';
+          form.reset();
+          successAlert?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          const errorMsg = result?.message || result?.error || 'Unconfirmed response from submission endpoint';
+          throw new Error(errorMsg);
+        }
       } catch (err) {
-        console.error('Submission error:', err);
+        // On failure, preserve all customer entered data and show clear error with phone fallback
         if (generalError) {
           generalError.style.display = 'flex';
-          if (errorText) errorText.textContent = 'Unable to submit right now. Please call us directly on 0477 319 160.';
+          if (errorText) {
+            errorText.textContent = 'Unable to submit your quote request right now. Please call us directly on 0477 319 160.';
+          }
+          generalError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } finally {
         if (submitBtn) {

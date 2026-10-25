@@ -41,7 +41,7 @@ const stats = [
 
 <style>
   .trust-bar-section {
-    background: rgba(15, 23, 42, 0.7);
+    background: #f8fafc;
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
     padding: 1.75rem 0;
@@ -72,24 +72,26 @@ const stats = [
     display: flex;
     align-items: center;
     gap: 0.9rem;
-    padding: 0.75rem;
+    padding: 0.85rem 1rem;
     border-radius: 0.75rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid transparent;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-fast);
   }
 
   .trust-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(56, 189, 248, 0.2);
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 
   .trust-icon-box {
     width: 44px;
     height: 44px;
     border-radius: 0.625rem;
-    background: rgba(14, 165, 233, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +109,7 @@ const stats = [
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--text-heading);
     line-height: 1.2;
   }
 
